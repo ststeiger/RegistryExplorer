@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{047F9FF2-ABA6-4AC5-8DEE-4601927F4862}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RegistryExplorer</RootNamespace>
+    <AssemblyName>RegistryExplorer</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusyCursor.cs" />
+    <Compile Include="Comparers\Comparer.cs" />
+    <Compile Include="Comparers\RegexComparer.cs" />
+    <Compile Include="Comparers\StringComparer.cs" />
+    <Compile Include="Controls\AboutCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AboutCtrl.designer.cs">
+      <DependentUpon>AboutCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListView2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NumericTextBox.designer.cs">
+      <DependentUpon>NumericTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AddToFavoritesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AddToFavoritesDialog.Designer.cs">
+      <DependentUpon>AddToFavoritesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ExportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ExportDialog.Designer.cs">
+      <DependentUpon>ExportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\JumpToKeyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\JumpToKeyDialog.Designer.cs">
+      <DependentUpon>JumpToKeyDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RemoveFavoritesDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RemoveFavoritesDialog.Designer.cs">
+      <DependentUpon>RemoveFavoritesDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\BinaryEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\BinaryEditor.Designer.cs">
+      <DependentUpon>BinaryEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\DWordEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\DWordEditor.Designer.cs">
+      <DependentUpon>DWordEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\MultiStringEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\MultiStringEditor.Designer.cs">
+      <DependentUpon>MultiStringEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\StringEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\StringEditor.Designer.cs">
+      <DependentUpon>StringEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ValueEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editors\ValueEditor.Designer.cs">
+      <DependentUpon>ValueEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventDictionary.cs" />
+    <Compile Include="Export\ExportProvider.cs" />
+    <Compile Include="Export\NativeExportProvider.cs" />
+    <Compile Include="Export\RegExporter.cs" />
+    <Compile Include="Export\TextExportProvider.cs" />
+    <Compile Include="Export\XmlExportProvider.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registry\Extensions.cs" />
+    <Compile Include="Registry\RegExplorer.cs" />
+    <Compile Include="Registry\RegKey.cs" />
+    <Compile Include="Registry\RegSearcher.cs" />
+    <Compile Include="Registry\RegUtility.cs" />
+    <Compile Include="Registry\RegValue.cs" />
+    <Compile Include="ShellUtility.cs" />
+    <Compile Include="UIUtility.cs" />
+    <Compile Include="__NET20\ExtensionAttribute.cs" />
+    <EmbeddedResource Include="Controls\AboutCtrl.resx">
+      <DependentUpon>AboutCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NumericTextBox.resx">
+      <DependentUpon>NumericTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddToFavoritesDialog.resx">
+      <DependentUpon>AddToFavoritesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ExportDialog.resx">
+      <DependentUpon>ExportDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\JumpToKeyDialog.resx">
+      <DependentUpon>JumpToKeyDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RemoveFavoritesDialog.resx">
+      <DependentUpon>RemoveFavoritesDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\BinaryEditor.resx">
+      <DependentUpon>BinaryEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\DWordEditor.resx">
+      <DependentUpon>DWordEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\MultiStringEditor.resx">
+      <DependentUpon>MultiStringEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\StringEditor.resx">
+      <DependentUpon>StringEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ValueEditor.resx">
+      <DependentUpon>ValueEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ascii.ico" />
+    <Content Include="Resources\binary.ico" />
+    <Content Include="Resources\fold_close.ico" />
+    <Content Include="Resources\fold_open.ico" />
+    <Content Include="Resources\Reg Explore.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Be.Windows.Forms.HexBox\Be.Windows.Forms.HexBox.csproj">
+      <Project>{26c5f25f-b450-4caf-ad8b-b8d11ae73457}</Project>
+      <Name>Be.Windows.Forms.HexBox</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
