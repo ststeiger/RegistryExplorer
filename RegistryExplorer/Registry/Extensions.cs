@@ -5,8 +5,11 @@ namespace RegistryExplorer.Registry
 
     static class Extensions
     {
+
+
         public static object GetDefaultData(this Microsoft.Win32.RegistryValueKind valueKind)
         {
+
             switch (valueKind)
             {
                 case Microsoft.Win32.RegistryValueKind.Binary:
@@ -24,11 +27,14 @@ namespace RegistryExplorer.Registry
                 case Microsoft.Win32.RegistryValueKind.Unknown:
                 default:
                     return null;
-            }
-        }
+            } // End switch (valueKind) 
+
+        } // End Function GetDefaultData 
+
 
         public static string ToDataType(this Microsoft.Win32.RegistryValueKind valueKind)
         {
+
             switch (valueKind)
             {
                 case Microsoft.Win32.RegistryValueKind.Binary:
@@ -47,11 +53,14 @@ namespace RegistryExplorer.Registry
                     return "REG_UNKNOWN";
                 default:
                     return string.Empty;
-            }
-        }
+            } // End switch (valueKind) 
+
+        } // End Function ToDataType 
+
 
         public static string ToHiveName(this Microsoft.Win32.RegistryHive regHive)
         {
+
             switch (regHive)
             {
                 case Microsoft.Win32.RegistryHive.ClassesRoot:
@@ -70,11 +79,14 @@ namespace RegistryExplorer.Registry
                     return "HKEY_USERS";
                 default:
                     return string.Empty;
-            }
-        }
+            } // End switch (regHive) 
+
+        } // End Function ToHiveName 
+
 
         public static Microsoft.Win32.RegistryKey ToKey(this Microsoft.Win32.RegistryHive regHive)
         {
+
             switch (regHive)
             {
                 case Microsoft.Win32.RegistryHive.ClassesRoot:
@@ -93,7 +105,12 @@ namespace RegistryExplorer.Registry
                     return Microsoft.Win32.Registry.Users;
                 default:
                     return null;
-            }
-        }
+            } // End switch (regHive) 
+
+        } // End Function ToKey 
+
+
     }
+
+
 }
